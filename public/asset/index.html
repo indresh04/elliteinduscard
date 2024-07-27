@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSRP Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .error {
+            border-color: red;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 0.2em;
+        }
+    </style>
+    <style>
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('translate-x-full');
+            menu.classList.toggle('translate-x-0');
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+        <div class="text-xl font-bold">HSRP BOOKING</div>
+        <div class="hidden lg:flex space-x-4">
+            <a href="index.html" class="text-blue-500">Home</a>
+            <a href="index.html" class="text-blue-500">What is HSRP</a>
+            <a href="formone.html" class="text-blue-500">Cheak for Home Installation</a>
+            <a href="formone.html" class="text-blue-500 font-semibold">Book Now</a>
+        </div>
+        <button class="lg:hidden text-blue-500" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed rounded-lg right-0 top-20 h-full w-64 bg-white shadow-md transform translate-x-full transition-transform duration-300">
+        <a href="/index.html" class="block px-4 py-2 text-blue-500">Home</a>
+        <a href="/index.html" class="block px-4 py-2 text-blue-500">What is HSRP</a>
+        <a href="/formone.html" class="block px-4 py-2 text-blue-500">Cheak for Home Installation</a>
+        <a href="/formone.html" class="block px-4 py-2 text-blue-500 font-semibold">Book Now</a>
+    </div>
+    <div>
+        <img class="w-full h-full object-cover" src="/assets/img/banner_img.png" alt="Logoimage"/>
+    </div>
+
+    <!-- Main Content -->
+<div class="mt-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="bg-yellow-300 p-4 flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-4">High Security Registration Plate</h2>
+            <button  class="bg-white text-black py-2 px-4 rounded"  onclick="orderHighSecurityPlate()">Order Now</button>
+        </div>
+        <div class="bg-blue-900 text-white p-4 flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-4">Number Plate for Four Wheeler</h2>
+            <button  class="bg-white text-black py-2 px-4 rounded"  onclick="orderHighSecurityPlate()">Order Now</button>
+        </div>
+        <div class="bg-yellow-300 p-4 flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-4">Number Plate for Heavy Wheeler</h2>
+            <button  class="bg-white text-black py-2 px-4 rounded"  onclick="orderHighSecurityPlate()">Order Now</button>
+        </div>
+        <div class="bg-blue-900 text-white p-4 flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-4">Only Colour Sticker</h2>
+            <button  class="bg-white text-black py-2 px-4 rounded"  onclick="orderHighSecurityPlate()">Order Now</button>
+        </div>
+        <div class="bg-yellow-300 p-4 flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-4">Number Plate for color-sticker</h2>
+            <button  class="bg-white text-black py-2 px-4 rounded"  onclick="orderHighSecurityPlate()">Order Now</button>
+        </div>
+    </div>
+    <div class=" mx-auto bg-white p-8 rounded shadow-md">
+        <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>
+        
+        <p class="mb-4">
+            Business Days are Monday-Friday: Holidays, Saturday and Sunday are not Included in shipping days. Shipping Days
+            <br>Please allow us 24-48 hours to ensure the product is successfully delivered to your mailbox.
+        </p>
+
+        <p class="mb-4">
+            Your privacy is important to us. This Privacy Policy explains uses, and discloses information from users of our website and services (collectively, the "Services").
+        </p>
+        
+        <h2 class="text-xl font-semibold mb-2">Information We Collect:</h2>
+        <p class="mb-4">
+            • Registration Information: We collect your number to process your HSRP. This information is mandatory to fulfill your request.
+            <br>• Contact Information: In some cases, we may collect your email address or phone number to communicate with you about your or for order updates. Additionally, when you make a purchase or attempt to make a purchase through the Site, we collect certain information from you, including your name, billing address, shipping address, payment information (including credit card numbers, email address, and phone number). We refer to this information as “Information.”
+        </p>
+        <p class="mb-4">
+            When we talk about “Personal Information” in this Privacy Policy, we are talking both about Device Information and Order Information.
+        </p>
+
+        <h2 class="text-xl font-semibold mb-2">How We Use Your Information:</h2>
+        <p class="mb-4">
+            • We use your registration information solely to process your HSRP and ensure it complies with regulations.
+            <br>• We may use your contact information to send you updates about your or order, or to respond to your inquiries.
+        </p>
+        <p class="mb-4">
+            We will never:
+            <br>• Sell or share your personal information with third parties for marketing purposes.
+            <br>• Use your information for any purpose other than those listed above without your consent.
+        </p>
+
+        <h2 class="text-xl font-semibold mb-2">Data Security:</h2>
+        <p class="mb-4">
+            We take reasonable steps to protect your information from unauthorized access, disclosure, alteration, or destruction. However, no internet transmission is completely secure, and we cannot guarantee the security of your information.
+        </p>
+
+        <h2 class="text-xl font-semibold mb-2">Changes to this Privacy Policy:</h2>
+        <p class="mb-4">
+            We may update this Privacy Policy from time to time. We will post any changes on this page.
+        </p>
+
+        <h2 class="text-xl font-semibold mb-2">Your Choices:</h2>
+        <p>
+            You can access and update your contact information by contacting us at [hsrpbooking.info@gmail.com].
+        </p>
+    </div>
+</div>
+
+    <div class="mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Save your valuable time</h2>
+        <p class="mb-2"><strong>Always Available</strong><br>You can reach us via email, free of charge, Monday to Friday from 10:30 am to 5:30 pm.</p>
+        <p class="mb-2"><strong>Professional Support</strong><br>Experience exceptional support for all your inquiries with our dedicated team ready to assist you every step of the way</p>
+        <p><strong>High Experience</strong><br>"Delight in a seamless and satisfying experience tailored to meet your needs."</p>
+    </div>
+
+    <!-- Responsive footer -->
+    <footer class="relative bg-blue-900 text-white py-8">
+        <div class="absolute top-0 w-full bg-blue-900 marquee">
+            <span>We are third party service providers, working independently.</span>
+        </div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Quick Link for Booking</h2>
+                    <ul>
+                        <li>Book Only color sticker</li>
+                        <li>Hsrp For two Wheeler</li>
+                        <li>Hsrp for four Wheeler</li>
+                        <li>Hsrp for Heavy Wheeler</li>
+                        <li>Hsrp for Used Wheeler</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Payment Partner</h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BHIM-UPI-Logo.svg/320px-BHIM-UPI-Logo.svg.png" alt="BHIM UPI" class="w-32">
+                    <p>We use safe payment method</p>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Locata us</h2>
+                    <address>
+                        Office Address C2/75, 3rd Floor, Shree Krishna Nagar, Andheri East, Mumbai, Maharashtra 400047
+                    </address>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Contact us</h2>
+                    <p>Helpline Number: +91 8498764340 (10:00 am – 04:00 pm)</p>
+                    <p>Email: hsrpbooking.info@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 w-full bg-blue-900 marquee">
+            <span>We are third party service providers, working independently.</span>
+        </div>
+    </footer>
+     <!-- responsive footer end -->
+<script>
+        function showError(input, message) {
+            const errorSpan = document.getElementById(input.id + '-error');
+            errorSpan.textContent = message;
+            input.classList.add('error');
+        }
+
+        function clearError(input) {
+            const errorSpan = document.getElementById(input.id + '-error');
+            errorSpan.textContent = '';
+            input.classList.remove('error');
+        }
+
+        document.getElementById('owner-name').addEventListener('input', function(e) {
+            let input = e.target;
+            let value = input.value.trim();
+            
+            // Prevent numbers in the name
+            value = value.replace(/[0-9]/g, '');
+            input.value = value;
+
+            // Capitalize the input
+            input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+
+            const isValid = /^[A-Z]+$/.test(value);
+            if (!isValid) {
+                showError(input, 'Please enter only uppercase letters.');
+            } else {
+                clearError(input);
+            }
+        });
+
+        document.getElementById('mobile-number').addEventListener('input', function(e) {
+            const input = e.target;
+            let value = input.value.trim();
+            
+            // Limit to 10 digits
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+                input.value = value;
+            }
+
+            const isValid = /^\d{10}$/.test(value);
+            if (!isValid) {
+                showError(input, 'Please enter a valid Indian mobile number ');
+            } else {
+                clearError(input);
+            }
+        });
+
+        document.getElementById('email-id').addEventListener('input', function(e) {
+            const input = e.target;
+            const value = input.value.trim();
+            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            if (!isValid) {
+                showError(input, 'Please enter a valid email address.');
+            } else {
+                clearError(input);
+            }
+        });
+
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            const ownerName = document.getElementById('owner-name');
+            const mobileNumber = document.getElementById('mobile-number');
+            const emailId = document.getElementById('email-id');
+
+            if (ownerName.classList.contains('error') || mobileNumber.classList.contains('error') || emailId.classList.contains('error')) {
+                e.preventDefault();
+                alert('Please correct the errors in the form.');
+            }
+        });
+    </script>
+    <script>
+        function orderHighSecurityPlate() {
+            window.location.href = "/formone.html";
+        }
+        
+        function orderFourWheelerPlate() {
+            window.location.href = "/index.html";
+        }
+        
+        function orderHeavyWheelerPlate() {
+            window.location.href = "/index.html";
+        }
+        
+        function orderColourSticker() {
+            window.location.href = "/index.html";
+        }
+        
+        function orderColorStickerPlate() {
+            window.location.href = "/index.html";
+        }
+        </script>
+</body>
+</html>
